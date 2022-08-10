@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--모든 화면에서 공통적으로보이는페이지-->
+<html lang="ko">
+<head>
+	<!--Required meta tags-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!--Bootstrap CSS-->
+	<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
+	<!--bokyung CSS-->
+	<link rel-"stylesheet" type="text/css" th:href="@{/style.css}">
+	<title>Hello hello!</title>
+
+</head>
+<body>
+<nav th:replace="navbar :: navbarFragment"></nav>
+<!-- 기본 쳄플릿 안에 삽입될 내용 Start-->
+<th:block layout:fragment="content"></th:block>
+<!-- 기본 템플릿 안에 삽입될 내용 End-->
+<!-- Bootstrap JS-->
+<script th:src="@{/bootstrap.min.js}"></script>
+<!--JAVASCRIPT START -->
+<th:block layout:fragment="script"></th:block>
+<!--JAVASCRIPT END-->
+</body>
+</html>
