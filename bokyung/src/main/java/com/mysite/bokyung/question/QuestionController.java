@@ -57,6 +57,7 @@ public class QuestionController {
 	@GetMapping("/create")
 	public String questionCreate(QuestionForm questionForm) {
 		return "question_form";
+		System.out.println("ddd");
 	}
 	
 	@PreAuthorize("isAuthenticated()")
