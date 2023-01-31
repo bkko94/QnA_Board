@@ -72,6 +72,7 @@ public class AnswerController {
 	            @PathVariable("id") Integer id, Principal principal) {
 	        if (bindingResult.hasErrors()) {
 	            return "answer_form";
+			System.out.println("dddd");
 	        }
 	        Answer answer = this.answerService.getAnswer(id);
 	        if (!answer.getAuthor().getUsername().equals(principal.getName())) {
