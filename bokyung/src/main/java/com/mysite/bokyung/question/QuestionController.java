@@ -76,7 +76,7 @@ public class QuestionController {
     public String questionModify(QuestionForm questionForm, @PathVariable("id") Integer id, Principal principal) {
         Question question = this.questionService.getQuestion(id);
         if(!question.getAuthor().getUsername().equals(principal.getName())) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "수정권한이 없습니다.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "수정권한이 없습니다ddddd.");
         }
         questionForm.setSubject(question.getSubject());
         questionForm.setContent(question.getContent());
@@ -103,7 +103,7 @@ public class QuestionController {
 	public String questionDelete(Principal principal, @PathVariable("id") Integer id) {
 		Question question = this.questionService.getQuestion(id);
 		if (!question.getAuthor().getUsername().equals(principal.getName())) {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "삭제권한이 없습니다.");
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "삭제권한이 dd없습니다.");
 		}
 		this.questionService.delete(question);
 		return "redirect:/";
